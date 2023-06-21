@@ -1,0 +1,12 @@
+
+<div class="card flex justify-content-center">
+  <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
+  <p-dialog header="Adivinar la bandera" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" maximizable="true" [resizable]="false">
+    <p>
+      El juego consiste en adivinar el país al que pertenece la bandera mostrada.
+    </p>
+    <p>
+      ¿Quieres jugar?
+    </p>
+  </p-dialog>
+</div>
