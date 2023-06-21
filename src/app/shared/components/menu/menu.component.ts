@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuItem} from "primeng/api";
+import {MenuItem, PrimeIcons} from "primeng/api";
 
 @Component({
   selector: 'app-menu',
@@ -7,29 +7,31 @@ import {MenuItem} from "primeng/api";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  items: MenuItem[] | undefined;
+  public items: MenuItem[] | undefined;
 
-  ngOnInit() {
+  public ngOnInit() {
     this.items = [
       {
         label: 'Inicio',
-        icon: 'pi pi-fw pi-home',
+        icon: PrimeIcons.HOME,
+        routerLink: 'preguntas/home'
       },
       {
         label: 'Banderas',
-        icon: 'pi pi-flag-fill',
-
+        icon: PrimeIcons.FLAG_FILL,
+        routerLink: 'preguntas/banderas'
       },
       {
         label: 'Capitales',
-        icon: 'pi pi-globe',
+        icon: PrimeIcons.GLOBE,
+        routerLink: 'preguntas/capitales'
       },
       {
         separator: true
       },
       {
         label: 'Configuración',
-        icon: 'pi pi-fw pi-cog',
+        icon: PrimeIcons.COG,
         disabled: true,
       }
     ];
