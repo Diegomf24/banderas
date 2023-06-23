@@ -67,6 +67,7 @@ export class BanderasComponent implements OnInit{
     this.mostrarDialogoEmpezar = false;
     this.pregunta = this.paisesService.getFlagsQuestions();
     clearInterval(this.interval);
+    this.mirarTiempo();
     this.reinicio = true;
   }
 
@@ -79,8 +80,14 @@ export class BanderasComponent implements OnInit{
         } else {
           clearInterval(this.interval);
         }
-      },1000
-    );
+      },1000);
+  }
+
+  public reiniciar() {
+    clearInterval(this.interval);
+    this.puntos= 0;
+    this.reinicio = false;
+    this.mostrarBanderas();
   }
 
 

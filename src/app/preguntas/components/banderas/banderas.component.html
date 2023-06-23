@@ -12,11 +12,12 @@
 </div>
 
 <div  class="card flex justify-content-center">
-  <p-card *ngIf="pregunta" [hidden]="mostrarDialogoEmpezar" header="Adivina la bandera..." [subheader]="'La respuesta anterior era: ' + respuestaCorrecta" [style]="{ width: '42rem' }">
+  <p-card *ngIf="pregunta" [hidden]="mostrarDialogoEmpezar" header="Adivina la bandera..." [subheader]="'La respuesta anterior era: ' + respuestaCorrecta" [style]="{ width: '32rem' }">
     <ng-template pTemplate="header">
       <img alt="tarjeta de una bandera aleatoria" [src]="pregunta.bandera" class="img-bandera"/>
     </ng-template>
-    <p>Puntos: <span class="{{puntos >= 0 ? 'bg-blue-400' : 'bg-red-400'}}" >{{puntos}}</span></p>
+    <p class="col pr-3 ">Puntos: <span class="{{puntos >= 0 ? 'bg-blue-400' : 'bg-red-400'}}" >{{puntos}}</span></p>
+    <p class="col pr-3 text-right">Tiempo: <span class="{{tiempo > 0 ? 'bg-blue-400' : 'bg-red-400'}}" >{{tiempo + 's'}}</span></p>
 
     <div class="grid">
       <div *ngFor="let nombre of pregunta.desordenadas" class="col-6">
@@ -25,7 +26,16 @@
 
     </div>
     <ng-template pTemplate="footer">
-      {{pregunta | json}}
+      CopyRight DiegoMF '23
     </ng-template>
   </p-card>
+</div>
+
+<div *ngIf="tiempo === 0 " class="card flex justify-content-center">
+  <p-dialog header="Fin del juego" [visible]="reinicio" [style]="{width: '50vw'}" [modal]="true">
+    <p>Se acabó el tiempo... oh oh oh</p>
+    <div class="text-center">
+      <p-button (click)="reiniciar()" label="Reiniciar" icon="pi pi-replay"></p-button>
+    </div>
+  </p-dialog>
 </div>
