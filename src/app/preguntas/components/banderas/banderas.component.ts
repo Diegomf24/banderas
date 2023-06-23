@@ -18,6 +18,7 @@ export class BanderasComponent implements OnInit{
   public respuestaCorrecta: string;
   public reinicio!: boolean;
   public interval: any;
+  public tiempo!: number;
 
 
   constructor(private paisesService: PaisesService) {
@@ -65,6 +66,21 @@ export class BanderasComponent implements OnInit{
   mostrarBanderas() {
     this.mostrarDialogoEmpezar = false;
     this.pregunta = this.paisesService.getFlagsQuestions();
+    clearInterval(this.interval);
+    this.reinicio = true;
+  }
+
+  public mirarTiempo() {
+    this.tiempo = 20;
+    this.interval = setInterval(
+      (): void => {
+        if (this.tiempo > 0) {
+          this.tiempo--;
+        } else {
+          clearInterval(this.interval);
+        }
+      },1000
+    );
   }
 
 

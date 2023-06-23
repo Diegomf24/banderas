@@ -24,7 +24,7 @@ export class PaisesService {
   }
 
   public getAllCountries(): Observable<Pais[]> {
-    return this.httpClient.get<Pais[]>("https:restcountries.com/v3.1/all");
+    return this.httpClient.get<Pais[]>("https://restcountries.com/v3.1/all");
   }
 
   public getFlagsQuestions(): PreguntasBanderas | null {
