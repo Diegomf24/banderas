@@ -12,7 +12,7 @@
 </div>
 
 <div  class="card flex justify-content-center">
-  <p-card *ngIf="pregunta" [hidden]="mostrarDialogoEmpezar" header="Adivina la bandera..." [subheader]="'La respuesta anterior era: ' + respuestaCorrecta" [style]="{ width: '32rem' }">
+  <p-card *ngIf="pregunta" [hidden]="mostrarDialogoEmpezar" header="Adivina la bandera..." [subheader]="'La respuesta anterior era: ' + respuestaCorrecta" [style]="{ width: '25rem' }">
     <ng-template pTemplate="header">
       <img alt="tarjeta de una bandera aleatoria" [src]="pregunta.bandera" class="img-bandera"/>
     </ng-template>
