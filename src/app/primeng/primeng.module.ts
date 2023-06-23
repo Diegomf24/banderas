@@ -7,6 +7,7 @@ import {PanelModule} from "primeng/panel";
 import {DialogModule} from "primeng/dialog";
 import {ToastModule} from "primeng/toast";
 import {CardModule} from "primeng/card";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 
 
@@ -22,7 +23,8 @@ import {CardModule} from "primeng/card";
     PanelModule,
     DialogModule,
     ToastModule,
-    CardModule
+    CardModule,
+    ProgressSpinnerModule
   ]
 })
 export class PrimengModule { }
